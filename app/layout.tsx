@@ -1,7 +1,9 @@
 import './globals.css'
 import { Inconsolata } from 'next/font/google'
 import { Metadata } from 'next';
+import { SessionProvider } from "next-auth/react"
 import Link from 'next/link';
+import { Session } from 'next-auth';
 
 const inter = Inconsolata({ subsets: ['latin'] })
 
@@ -12,16 +14,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  pageProps: { session, ...pageProps }
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  pageProps: { session: Session }
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + "flex min-h-screen flex-col mx-10 bg-green1 whs"}>
-        <nav className='my-5'>
-          <Link href={''}>Hello World</Link>
+      <body className={inter.className + "flex min-h-screen flex-col mx-10 bg-green1 text-white"}>
+        <nav className='my-5 z-20 fixed'>
+          <Link className='font-bold text-2xl bg-white text-green1 px-2' href={''}>NSMS</Link>
+          <span className='font-bold pl-1'>Nexa School Management System</span>
         </nav>
-        {children}
+        <SessionProvider session={session}>
+          {children}
+        </SessionProvider>
       </body>
     </html>
   )
