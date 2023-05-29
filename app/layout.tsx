@@ -14,10 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  pageProps: { session, ...pageProps }
 }: {
-  children: React.ReactNode,
-  pageProps: { session: Session }
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -26,9 +24,7 @@ export default function RootLayout({
           <Link className='font-bold text-2xl bg-white text-green1 px-2' href={''}>NSMS</Link>
           <span className='font-bold pl-1'>Nexa School Management System</span>
         </nav>
-        <SessionProvider session={session}>
-          {children}
-        </SessionProvider>
+        {children}
       </body>
     </html>
   )
