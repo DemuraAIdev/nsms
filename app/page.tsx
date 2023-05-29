@@ -5,12 +5,8 @@ export default function Home() {
     <main>
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-4xl font-bold">Welcome to <span className="text-green1 bg-white px-2">NSMS</span></h1>
+        <a href="/auth/login" className="text-2xl font-bold text-green1 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50 sm:px-[100%] lg:px-2 text-center">Login</a>
       </div>
-
-      <p className="mb-3">
-        This is Nexa School Management System. This is a project made by DemuraAI a.k.a VahryIskandar.
-      </p>
-
     </main>
   )
 }

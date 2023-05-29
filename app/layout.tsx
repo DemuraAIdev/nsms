@@ -2,6 +2,7 @@ import './globals.css'
 import { Inconsolata } from 'next/font/google'
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 // TODO: Add session provider
 //import { SessionProvider } from "next-auth/react"
@@ -22,10 +23,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className={"flex min-h-screen flex-col mx-10 bg-green1 text-white"}>
-        <Navbar />
-        {children}
+      <body className=' bg-green1 text-white'>
+        <div className={"flex min-h-screen flex-col mx-10"}>
+          <Navbar />
+          {children}
+        </div>
+        <Footer />
       </body>
+
     </html>
   )
 }
