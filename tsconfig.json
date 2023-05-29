@@ -26,14 +26,17 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
     },
     "typeRoots": [
-      ".next/types/**/*.ts",
       "types/**/*.d.ts"
     ]
   },
   "include": [
+    ".next/types/**/*.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
