@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
+
 // TODO: Add session provider
 //import { SessionProvider } from "next-auth/react"
 //import type { Session } from 'next-auth'
@@ -25,8 +26,13 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className=' bg-green-400 text-white'>
         <div className={"flex min-h-screen flex-col mx-10"}>
+
           <Navbar />
-          {children}
+          <div className=''>
+
+
+            {children}
+          </div>
         </div>
         <Footer />
       </body>
