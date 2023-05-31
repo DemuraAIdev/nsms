@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode,
@@ -26,11 +26,8 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className=' bg-green-400 text-white'>
         <div className={"flex min-h-screen flex-col mx-10"}>
-
           <Navbar />
           <div className=''>
-
-
             {children}
           </div>
         </div>
