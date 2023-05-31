@@ -19,7 +19,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className='bg-green-400 text-white'>
+      <body className='bg-green-500 text-white'>
         <Navbar />
         <div className={"flex min-h-screen flex-col mx-10"}>
 

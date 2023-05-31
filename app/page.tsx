@@ -10,18 +10,18 @@ export default async function Home() {
 
         {session?.user ? (
           <>
-            <h1 className="text-4xl font-bold">Welcome back <span className="text-green-400 bg-white px-2">{session.user.name}</span></h1>
+            <h1 className="text-4xl font-bold">Welcome back <span className="text-green-500 bg-white px-2">{session.user.name}</span></h1>
             <p className="text-justify mt-1">
               This is Nexa School Management System. This is a project made by VahryIskandar.
             </p>
             <div>
-              <button className="text-2xl font-bold text-green-400 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Dashboard</button>
+              <button className="text-2xl font-bold text-green-500 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Dashboard</button>
               <SignOut />
             </div>
           </>
         ) : (
           <>
-            <h1 className="text-4xl font-bold">Welcome to <span className="text-green-400 bg-white px-2">NSMS</span>
+            <h1 className="text-4xl font-bold">Welcome to <span className="text-green-500 bg-white text px-2">NSMS</span>
             </h1>
             <p className="text-justify mt-1">
               This is Nexa School Management System. This is a project made by VahryIskandar.
@@ -39,7 +39,7 @@ export default async function Home() {
             <time className="mb-1 text-sm font-normal leading-none ">30 May 2023</time>
             <h3 className="text-lg font-semibold text-white">First commit on github</h3>
             <p className="mb-4 text-base font-normal text-white">I create this project for school management System.</p>
-            <a href="https://github.com/DemuraAIdev/nsms" className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-400 bg-white rounded-lg hover:bg-green-200 focus:z-10 focus:ring-4 ">Github
+            <a href="https://github.com/DemuraAIdev/nsms" className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-500 bg-white rounded-lg hover:bg-green-200 focus:z-10 focus:ring-4 ">Github
             </a>
           </li>
         </ol>
