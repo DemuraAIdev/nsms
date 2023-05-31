@@ -1,14 +1,8 @@
 import './globals.css'
 import { Inconsolata } from 'next/font/google'
-import { getServerSession } from "next-auth/next"
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-
-// TODO: Add session provider
-//import { SessionProvider } from "next-auth/react"
-//import type { Session } from 'next-auth'
 
 const inter = Inconsolata({ subsets: ['latin'] })
 
@@ -25,9 +19,10 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className=' bg-green-400 text-white'>
+      <body className='bg-green-400 text-white'>
+        <Navbar />
         <div className={"flex min-h-screen flex-col mx-10"}>
-          <Navbar />
+
           <div className=''>
             {children}
           </div>

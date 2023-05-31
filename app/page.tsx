@@ -1,6 +1,10 @@
+"use client"
+import { SignIn } from "@/components/ButtonAuth"
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
-
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(authOptions);
   return (
     <main>
       <div className="flex flex-col items-center justify-center min-h-screen">
@@ -9,7 +13,13 @@ export default function Home() {
         <p className="text-justify">
           This is Nexa School Management System. This is a project made by VahryIskandar.
         </p>
-        <a href="/auth/login" className="text-2xl font-bold text-green-400 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Login</a>
+        <div>
+          {session?.user ? (
+            <button className="text-2xl font-bold text-green-400 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Dashboard</button>
+          ) : (
+            <SignIn />
+          )}
+        </div>
       </div>
 
       <div className="mb-3">

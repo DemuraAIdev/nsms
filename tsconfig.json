@@ -30,6 +30,9 @@
       "@/components/*": [
         "./components/*"
       ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
     },
     "typeRoots": [
       "types/**/*.d.ts"
