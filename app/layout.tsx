@@ -1,5 +1,6 @@
 import './globals.css'
 import { Inconsolata } from 'next/font/google'
+import { getServerSession } from "next-auth/next"
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
