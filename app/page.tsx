@@ -1,5 +1,4 @@
-"use client"
-import { SignIn } from "@/components/ButtonAuth"
+import { SignIn, SignOut } from "@/components/ButtonAuth"
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
@@ -9,17 +8,27 @@ export default async function Home() {
     <main>
       <div className="flex flex-col items-center justify-center min-h-screen">
 
-        <h1 className="text-4xl font-bold">Welcome to <span className="text-green-400 bg-white px-2">NSMS</span></h1>
-        <p className="text-justify">
-          This is Nexa School Management System. This is a project made by VahryIskandar.
-        </p>
-        <div>
-          {session?.user ? (
-            <button className="text-2xl font-bold text-green-400 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Dashboard</button>
-          ) : (
+        {session?.user ? (
+          <>
+            <h1 className="text-4xl font-bold">Welcome back <span className="text-green-400 bg-white px-2">{session.user.name}</span></h1>
+            <p className="text-justify mt-1">
+              This is Nexa School Management System. This is a project made by VahryIskandar.
+            </p>
+            <div>
+              <button className="text-2xl font-bold text-green-400 bg-white px-2 mt-2 shadow-2xl hover:bg-opacity-50  text-center">Dashboard</button>
+              <SignOut />
+            </div>
+          </>
+        ) : (
+          <>
+            <h1 className="text-4xl font-bold">Welcome to <span className="text-green-400 bg-white px-2">NSMS</span>
+            </h1>
+            <p className="text-justify mt-1">
+              This is Nexa School Management System. This is a project made by VahryIskandar.
+            </p>
             <SignIn />
-          )}
-        </div>
+          </>
+        )}
       </div>
 
       <div className="mb-3">
