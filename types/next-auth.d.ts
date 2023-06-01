@@ -10,6 +10,7 @@ declare module "next-auth" {
             address: string,
             /** The user's email address. */
             name: string,
+            role: string,
         }
     }
 }

@@ -1,15 +1,19 @@
 import { SignIn, SignOut } from "@/components/ButtonAuth"
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import FormWelcome from "./Form.compo";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
+
   return (
     <main>
       <div className="flex flex-col items-center justify-center min-h-screen">
 
         {session?.user ? (
           <>
+            <FormWelcome />
+
             <h1 className="text-4xl font-bold">Welcome back <span className="text-green-500 bg-white px-2">{session.user.name}</span></h1>
             <p className="text-justify mt-1">
               This is Nexa School Management System. This is a project made by VahryIskandar.
